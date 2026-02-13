@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- / makes text display correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- / makes it work on phones -->
+  <title>Be My Valentine?</title> <!-- / browser tab title -->
+  <link rel="stylesheet" href="style.css"> <!-- / connects your CSS file -->
+</head>
+<body>
+
+  <div class="container"> <!-- / the main box that holds the page content -->
+    <h1>Will you be my Valentine? 💘</h1> <!-- / title question -->
+
+    <div class="buttons"> <!-- / this is the “play area” where the buttons live -->
+      <button id="yesBtn">Yes ❤️</button> <!-- / yes button -->
+      <button id="noBtn">No 💔</button> <!-- / no button (moves when clicked) -->
+    </div>
+
+    <p id="message"></p> <!-- / text messages appear here -->
+
+    <!-- / this is the "click here" link that takes them to a website -->
+    <a
+      id="clickHereLink"
+      class="linkButton"
+      href="https://example.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Click here 💌
+    </a>
+    <!-- / IMPORTANT: change https://example.com to your real website link -->
+  </div>
+
+  <!-- / full screen image overlay (hidden until Yes is clicked) -->
+  <div id="fullScreenImage">
+    <img src="your-image.jpg" alt="Valentine Surprise">
+    <!-- / IMPORTANT: put your image file in the same folder and rename it to match -->
+  </div>
+
+  <script src="script.js"></script> <!-- / connects your JavaScript file -->
+</body>
+</html>
