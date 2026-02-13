@@ -1,0 +1,100 @@
+body {
+  background-color: #ffe6ea; /* / pink background */
+  display: flex; /* / center content */
+  justify-content: center; /* / center left right */
+  align-items: center; /* / center up down */
+  height: 100vh; /* / full screen height */
+  margin: 0; /* / remove default browser margin */
+  font-family: Arial, sans-serif; /* / font */
+}
+
+.container {
+  width: 420px; /* / desktop stays exactly like before */
+  height: auto; /* / allow message to take space */
+  text-align: center; /* / center text */
+  position: relative; /* / positioning context */
+  padding: 20px; /* / spacing inside */
+  box-sizing: border-box; /* / keep sizing stable */
+}
+
+h1 {
+  font-size: 2.2em; /* / desktop heading size like before */
+  margin: 10px 0 20px 0; /* / spacing */
+}
+
+.buttons {
+  width: 100%; /* / full width of container */
+  height: 240px; /* / movement area */
+  position: relative; /* / boundary for absolute buttons */
+}
+
+/* / shared button styling (desktop default) */
+#yesBtn,
+#noBtn {
+  position: absolute; /* / allows left and top placement */
+  font-size: 1.2em; /* / desktop button size like before */
+  padding: 10px 20px; /* / desktop padding like before */
+  cursor: pointer; /* / hand cursor */
+}
+
+/* / Yes button fixed position (desktop) */
+#yesBtn {
+  left: 60px; /* / desktop position */
+  top: 90px; /* / desktop position */
+  z-index: 5; /* / keep clickable */
+}
+
+/* / No button start position (desktop) */
+#noBtn {
+  left: 240px; /* / desktop position */
+  top: 90px; /* / desktop position */
+  z-index: 6; /* / above yes */
+}
+
+/* / message stays below buttons and never overlaps */
+#message {
+  position: static; /* / normal flow */
+  margin-top: 20px; /* / spacing under buttons */
+  font-size: 1.2em; /* / desktop message size like before */
+  font-weight: bold; /* / bold text */
+  min-height: 40px; /* / reserves space */
+}
+
+/* / PHONE VIEW ONLY (does not affect desktop) */
+@media (max-width: 600px) {
+
+  .container {
+    width: 90%; /* / fit phone screen */
+    max-width: 420px; /* / never exceed desktop width */
+    padding: 16px; /* / slightly less padding on phone */
+  }
+
+  h1 {
+    font-size: 1.6em; /* / smaller heading for phone */
+    margin: 10px 0 16px 0; /* / spacing */
+  }
+
+  .buttons {
+    height: 200px; /* / slightly smaller movement area on phone */
+  }
+
+  #yesBtn,
+  #noBtn {
+    font-size: 1em; /* / smaller button text on phone */
+    padding: 10px 16px; /* / smaller padding on phone */
+  }
+
+  #yesBtn {
+    left: 12%; /* / better spacing on small screens */
+    top: 80px; /* / phone position */
+  }
+
+  #noBtn {
+    left: 55%; /* / phone start position */
+    top: 80px; /* / phone position */
+  }
+
+  #message {
+    font-size: 1em; /* / smaller message text on phone */
+  }
+}
