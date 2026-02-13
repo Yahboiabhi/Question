@@ -1,0 +1,115 @@
+body {
+  background-color: #ffe6ea; /* / pink background */
+  display: flex; /* / center container */
+  justify-content: center; /* / center left-right */
+  align-items: center; /* / center up-down */
+  height: 100vh; /* / full screen height */
+  margin: 0; /* / remove default browser margin */
+  font-family: Arial, sans-serif; /* / font */
+}
+
+.container {
+  width: 420px; /* / desktop size */
+  height: auto; /* / allow message to grow */
+  text-align: center; /* / center text */
+  position: relative; /* / positioning context */
+  padding: 20px; /* / inner spacing */
+  box-sizing: border-box; /* / keep width stable with padding */
+}
+
+h1 {
+  font-size: 2.2em; /* / title size */
+  margin: 10px 0 20px 0; /* / spacing */
+}
+
+.buttons {
+  width: 100%; /* / full width */
+  height: 240px; /* / movement area for No */
+  position: relative; /* / boundary for absolute buttons */
+}
+
+#yesBtn,
+#noBtn {
+  position: absolute; /* / allows left and top placement */
+  font-size: 1.2em; /* / button text size */
+  padding: 10px 20px; /* / padding */
+  cursor: pointer; /* / hand cursor */
+}
+
+#yesBtn {
+  left: 60px; /* / fixed position */
+  top: 90px; /* / fixed position */
+  z-index: 5; /* / always clickable */
+}
+
+#noBtn {
+  left: 240px; /* / start position */
+  top: 90px; /* / start position */
+  z-index: 6; /* / above yes */
+}
+
+#message {
+  position: static; /* / stays under buttons */
+  margin-top: 20px; /* / spacing */
+  font-size: 1.2em; /* / message text size */
+  font-weight: bold; /* / bold message */
+  min-height: 40px; /* / reserves space when empty */
+}
+
+/* / full screen image overlay hidden until Yes is clicked */
+#fullScreenImage {
+  position: fixed; /* / cover whole screen */
+  top: 0; /* / start at top */
+  left: 0; /* / start at left */
+  width: 100vw; /* / full width */
+  height: 100vh; /* / full height */
+  background-color: black; /* / background behind image */
+  display: none; /* / hidden at start */
+  justify-content: center; /* / center image horizontally */
+  align-items: center; /* / center image vertically */
+  z-index: 999; /* / above everything */
+}
+
+#fullScreenImage img {
+  max-width: 100%; /* / fit screen width */
+  max-height: 100%; /* / fit screen height */
+  object-fit: contain; /* / keep image proportions */
+}
+
+/* / phone view only */
+@media (max-width: 600px) {
+
+  .container {
+    width: 90%; /* / fit phone screen */
+    max-width: 420px; /* / keep limit */
+    padding: 16px; /* / slightly less padding */
+  }
+
+  h1 {
+    font-size: 1.6em; /* / smaller heading */
+  }
+
+  .buttons {
+    height: 200px; /* / smaller movement area */
+  }
+
+  #yesBtn,
+  #noBtn {
+    font-size: 1em; /* / smaller buttons */
+    padding: 10px 16px; /* / smaller padding */
+  }
+
+  #yesBtn {
+    left: 12%; /* / better spacing on phone */
+    top: 80px;
+  }
+
+  #noBtn {
+    left: 55%;
+    top: 80px;
+  }
+
+  #message {
+    font-size: 1em; /* / smaller message */
+  }
+}
