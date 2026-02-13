@@ -1,0 +1,71 @@
+body {
+  background-color: #ffe6ea; /* / pink background */
+  display: flex; /* / center content */
+  justify-content: center; /* / center left-right */
+  align-items: center; /* / center up-down */
+  height: 100vh; /* / full height */
+  margin: 0; /* / remove default margin */
+  font-family: Arial, sans-serif; /* / font */
+}
+
+.container {
+  width: 420px; /* / desktop size */
+  padding: 20px; /* / spacing */
+  box-sizing: border-box; /* / stable sizing */
+  text-align: center; /* / center text */
+}
+
+h1 {
+  font-size: 2.2em; /* / title size */
+  margin: 10px 0 20px 0; /* / spacing */
+}
+
+.buttons {
+  width: 100%; /* / full width */
+  height: 240px; /* / movement area */
+  position: relative; /* / boundary for absolute buttons */
+}
+
+#yesBtn,
+#noBtn {
+  position: absolute; /* / allow left/top placement */
+  font-size: 1.2em; /* / button size */
+  padding: 10px 20px; /* / padding */
+  cursor: pointer; /* / hand cursor */
+}
+
+#yesBtn {
+  left: 60px; /* / fixed position */
+  top: 90px; /* / fixed position */
+  z-index: 5; /* / always clickable */
+}
+
+#noBtn {
+  left: 240px; /* / starting position */
+  top: 90px; /* / starting position */
+  z-index: 6; /* / above yes */
+}
+
+#message {
+  margin-top: 20px; /* / spacing */
+  font-size: 1.2em; /* / message size */
+  font-weight: bold; /* / bold */
+  min-height: 40px; /* / reserve space */
+}
+
+/* / phone only */
+@media (max-width: 600px) {
+  .container { width: 90%; }
+  h1 { font-size: 1.6em; }
+  .buttons { height: 200px; }
+
+  #yesBtn, #noBtn {
+    font-size: 1em;
+    padding: 10px 16px;
+  }
+
+  #yesBtn { left: 12%; top: 80px; }
+  #noBtn { left: 55%; top: 80px; }
+
+  #message { font-size: 1em; }
+}
